@@ -9,12 +9,32 @@ layout: default
 
     {% include header.html %}
 
+
+<h1>My First JavaScript Animation</h1>
+
+<div id="animation">My animation will go here</div>
+
+
     <main id="main">
       {{ content }}
     </main>
     <script src={{ "/assets/js/instantclick.min.js" | relative_url }}  data-no-instant></script>
     <script data-no-instant>
       InstantClick.init();
+      function myMove() {
+  var elem = document.getElementById("animate");
+  var pos = 0;
+  var id = setInterval(frame, 5);
+  function frame() {
+    if (pos == 350) {
+      clearInterval(id);
+    } else {
+      pos++;
+      elem.style.top = pos + 'px';
+      elem.style.left = pos + 'px';
+    }
+  }
+} 
     </script>
   </body>
 </html>
