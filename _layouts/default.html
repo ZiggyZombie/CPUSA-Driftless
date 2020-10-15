@@ -3,6 +3,20 @@ layout: default
 ---
 
 <!DOCTYPE html>
+<style>
+#container {
+  width: 400px;
+  height: 400px;
+  position: relative;
+  background: yellow;
+}
+#animate {
+  width: 50px;
+  height: 50px;
+  position: absolute;
+  background-color: red;
+}
+</style>
 <html lang="en">
 
   {% include head.html %}
@@ -11,8 +25,11 @@ layout: default
 
 
 <h1>My First JavaScript Animation</h1>
+<p><button onclick="myMove()">Click Me</button></p> 
+<div id ="container">
+  <div id ="animate"></div>
+</div>
 
-<div id="animation">My animation will go here</div>
 
 
     <main id="main">
